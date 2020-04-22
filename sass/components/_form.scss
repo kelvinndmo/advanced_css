@@ -1,0 +1,84 @@
+.form {
+    &__group {
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+    }
+    &__input {
+        font-size: 1.5rem;
+        padding: 1.5rem 2rem;
+        border-radius: 2px;
+        color: inherit;
+        font-family: inherit;
+        background-color: rgba($color-white, .5);
+        border-bottom: 3px solid transparent;
+        border: none;
+        width: 60%;
+        display: block;
+        transition: all .3s;
+        &::-webkit-input-placeholder {
+            color: $color-grey-dark-2;
+        }
+        &:focus {
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba($color-black, .1);
+            border-bottom: 3px solid $color-primary-light;
+            &:invalid {
+                border-bottom: 3px solid $color-secondary-dark;
+            }
+        }
+    }
+    &__label {
+        font-size: 1.2rem;
+        font-weight: 700rem;
+        margin-left: 2rem;
+        margin-top: .7rem;
+        display: block;
+        transition: all .7s;
+    }
+    &__input:placeholder-shown+&__label {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4rem);
+    }
+    &__radio-group {
+        width: 45%;
+        display: inline-block;
+    }
+    &__radio-label {
+        font-size: $default-font-size;
+        cursor: pointer;
+        position: relative;
+        padding-left: 5rem;
+    }
+    &__radio-input {
+        display: none;
+    }
+    &__radio-button {
+        height: 2rem;
+        width: 2rem;
+        border: 5px solid $color-primary-light;
+        display: inline-block;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        top: -.4rem;
+        &::after {
+            height: 1.3rem;
+            width: 1.3rem;
+            content: "";
+            display: block;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: $color-primary-light;
+            opacity: 0;
+            transition: .2s;
+        }
+    }
+    &__radio-input:checked~&__radio-label &__radio-button::after {
+        opacity: 1;
+    }
+}

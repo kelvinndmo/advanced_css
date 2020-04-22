@@ -1,14 +1,15 @@
-html{
+html {
     font-size: 62.5%;
 }
-*, *::after, *::before{
+
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
-    box-shadow: inherit;
+    box-shadow: none;
 }
 
-body{
+body {
     box-sizing: border-box;
 }
-
-
